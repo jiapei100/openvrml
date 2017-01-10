@@ -1042,13 +1042,13 @@ namespace openvrml {
 
 } // namespace openvrml
 
-namespace std {
+// namespace std {
 
-    template <>
-    OPENVRML_API inline void swap(openvrml::image & a, openvrml::image & b)
-    {
-        a.swap(b);
-    }
-}
+//     template <>
+//     OPENVRML_API inline void swap(openvrml::image & a, openvrml::image & b)
+//     {
+//         a.swap(b);
+//     }
+// }
 
 # endif // OPENVRML_BASETYPES_H

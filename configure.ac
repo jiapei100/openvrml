@@ -23,7 +23,8 @@ AC_CONFIG_FILES([Makefile]
 
 AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE([1.10.1 foreign subdir-objects check-news tar-pax])
-AM_CONFIG_HEADER([config.h])
+#AM_CONFIG_HEADER([config.h])
+AC_CONFIG_HEADER([config.h])
 
 #
 # Checks for programs.
@@ -107,7 +108,7 @@ AC_CACHE_CHECK([for boost_thread$BOOST_LIB_SUFFIX library],
 [ov_cv_boost_thread],
 [ov_cv_boost_thread=no
 ov_save_LIBS=$LIBS
-LIBS="-lboost_thread$BOOST_LIB_SUFFIX $LIBS"
+LIBS="-L/usr/lib/x86_64-linux-gnu -lboost_system$BOOST_LIB_SUFFIX -lboost_thread$BOOST_LIB_SUFFIX $LIBS"
 AC_LANG_PUSH([C++])
 AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <boost/thread.hpp>]],
                                 [[boost::thread t]])],
